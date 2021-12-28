@@ -78,14 +78,14 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\Programming\C++\OpenGL\Dependencies\GLAD\include;D:\Programming\C++\OpenGL\Dependencies\GLFW\Include;D:\Programming\C++\OpenGL\Dependencies\MATH\glm;$(IncludePath)</IncludePath>
+    <IncludePath>D:\Programming\C++\OpenGL\Dependencies\GLAD\include;D:\Programming\C++\OpenGL\Dependencies\GLFW\Include;D:\Programming\C++\OpenGL\Dependencies\MATH\glm;D:\Programming\C++\Games\SnakeOGL\src;$(IncludePath)</IncludePath>
     <LibraryPath>D:\Programming\C++\OpenGL\Dependencies\GLFW\Lib;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\intermediates\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>D:\Programming\C++\OpenGL\Dependencies\GLAD\include;D:\Programming\C++\OpenGL\Dependencies\GLFW\Include;D:\Programming\C++\OpenGL\Dependencies\MATH\glm;$(IncludePath)</IncludePath>
+    <IncludePath>D:\Programming\C++\OpenGL\Dependencies\GLAD\include;D:\Programming\C++\OpenGL\Dependencies\GLFW\Include;D:\Programming\C++\OpenGL\Dependencies\MATH\glm;D:\Programming\C++\Games\SnakeOGL\src;$(IncludePath)</IncludePath>
     <LibraryPath>D:\Programming\C++\OpenGL\Dependencies\GLFW\Lib;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\intermediates\$(Platform)\$(Configuration)\</IntDir>
@@ -149,10 +149,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\engine\glad.c" />
+    <ClCompile Include="src\engine\Renderer.cpp" />
+    <ClCompile Include="src\engine\Shader.cpp" />
+    <ClCompile Include="src\game\GameLoop.cpp" />
     <ClCompile Include="src\game\main.cpp" />
+    <ClCompile Include="src\engine\Quad.cpp" />
+    <ClCompile Include="src\game\Snake.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\engine\Renderer.h" />
+    <ClInclude Include="src\engine\Shader.h" />
+    <ClInclude Include="src\game\GameLoop.h" />
+    <ClInclude Include="src\engine\Quad.h" />
+    <ClInclude Include="src\game\Snake.h" />
     <ClInclude Include="src\image_loader\stb_image.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\shaders\head.fs" />
+    <None Include="src\shaders\snakePiece.vs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="src\shaders\tail.fs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
